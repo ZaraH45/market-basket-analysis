@@ -1,0 +1,41 @@
+{
+  "mode": "real",
+  "analyzed_baskets": 30000,
+  "mean_basket_size": 10.076833333333333,
+  "median_basket_size": 8.0,
+  "reordered_rate": 0.5924811035212781,
+  "top_product": "Banana",
+  "top_department": "produce",
+  "peak_hour": 10,
+  "peak_encoded_day": 0,
+  "charts": [
+    {
+      "filename": "01_top_products.png",
+      "interpretation": "Products with the largest number of observed purchased order lines; occurrence does not measure revenue."
+    },
+    {
+      "filename": "02_basket_sizes.png",
+      "interpretation": "Shows whether typical orders contain few or many unique items; high values may be genuine, not errors."
+    },
+    {
+      "filename": "03_order_day.png",
+      "interpretation": "Shows ordering frequency by dataset day code 0\u20136; original data does not explicitly define calendar weekday names."
+    },
+    {
+      "filename": "04_order_hour.png",
+      "interpretation": "Shows peak ordering hours in the chosen sample, useful for browsing trends."
+    },
+    {
+      "filename": "05_departments.png",
+      "interpretation": "Higher counts indicate more frequently purchased items from a department, not necessarily more spending."
+    },
+    {
+      "filename": "06_basket_boxplot.png",
+      "interpretation": "Points beyond whiskers are potentially interesting large baskets; do not automatically remove them."
+    },
+    {
+      "filename": "07_numeric_correlations.png",
+      "interpretation": "Exploratory linear correlations only; order rows repeat across items and this does not imply causal relationships."
+    }
+  ]
+}

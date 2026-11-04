@@ -1,0 +1,108 @@
+{
+  "audit_before": {
+    "orders": {
+      "rows": 30000,
+      "columns": [
+        "order_id",
+        "user_id",
+        "eval_set",
+        "order_number",
+        "order_dow",
+        "order_hour_of_day",
+        "days_since_prior_order"
+      ],
+      "missing_by_column": {
+        "order_id": 0,
+        "user_id": 0,
+        "eval_set": 0,
+        "order_number": 0,
+        "order_dow": 0,
+        "order_hour_of_day": 0,
+        "days_since_prior_order": 1894
+      },
+      "exact_duplicates": 0
+    },
+    "order_products": {
+      "rows": 302305,
+      "columns": [
+        "order_id",
+        "product_id",
+        "add_to_cart_order",
+        "reordered"
+      ],
+      "missing_by_column": {
+        "order_id": 0,
+        "product_id": 0,
+        "add_to_cart_order": 0,
+        "reordered": 0
+      },
+      "exact_duplicates": 0
+    },
+    "products": {
+      "rows": 49688,
+      "columns": [
+        "product_id",
+        "product_name",
+        "aisle_id",
+        "department_id"
+      ],
+      "missing_by_column": {
+        "product_id": 0,
+        "product_name": 0,
+        "aisle_id": 0,
+        "department_id": 0
+      },
+      "exact_duplicates": 0
+    },
+    "aisles": {
+      "rows": 134,
+      "columns": [
+        "aisle_id",
+        "aisle"
+      ],
+      "missing_by_column": {
+        "aisle_id": 0,
+        "aisle": 0
+      },
+      "exact_duplicates": 0
+    },
+    "departments": {
+      "rows": 21,
+      "columns": [
+        "department_id",
+        "department"
+      ],
+      "missing_by_column": {
+        "department_id": 0,
+        "department": 0
+      },
+      "exact_duplicates": 0
+    }
+  },
+  "cleaning": {
+    "removed_duplicate_or_null_key_rows": {
+      "order_id": 0,
+      "order_id,product_id": 0,
+      "product_id": 0,
+      "aisle_id": 0,
+      "department_id": 0
+    },
+    "invalid_order_time_rows_removed": 0,
+    "invalid_line_flags_or_positions_removed": 0,
+    "first_order_missing_days_since_prior_order": "kept as NA (expected structural missingness)",
+    "outlier_policy": "invalid hours/days/positions excluded; true high basket sizes retained; 0..30 days valid interval",
+    "scaling": "Not applied: categorical product IDs are identifiers and Apriori/FP-Growth consume binary basket presence, not continuous features."
+  },
+  "after": {
+    "orders": 30000,
+    "order_product_rows": 302305,
+    "products_catalog": 49688,
+    "nonempty_baskets": 30000
+  },
+  "data_mode": "real",
+  "dataset_source": "Instacart Kaggle: complete 30,000-order reproducible prior-order sample (source tables bundled)",
+  "total_prior_orders_in_source": 3214874,
+  "selected_prior_orders": 30000,
+  "sampling_method": "deterministic random sample of prior order IDs with seed 42; item lines filtered in chunks; not a time series split",
+  "max_orders_requested": 30000
+}
