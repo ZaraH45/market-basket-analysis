@@ -1,0 +1,28 @@
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.env
+*.log
+
+# Dataset files (do not upload large datasets)
+backend/data/raw/*
+backend/data/processed/*
+!backend/data/raw/.gitkeep
+!backend/data/processed/.gitkeep
+
+# Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Environment files
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/
+.DS_Store
