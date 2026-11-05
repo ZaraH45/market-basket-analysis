@@ -6,5 +6,4 @@ __pycache__/
 .DS_Store
 .env
 /data/raw/*.csv
-/data/processed/order_products_clean.csv
-/data/processed/baskets.csv
+/data/processed/*.csv

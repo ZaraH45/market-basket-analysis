@@ -23,7 +23,9 @@ The original dataset consists of six CSV files:
 | `aisles.csv` | Product aisle information |
 | `departments.csv` | Product department information |
 
-The dataset contains approximately 3.2 million orders and 49,688 products.
+The original dataset contains approximately 3.2 million orders and 49,688 products.
+
+The Phase 1 pipeline requires five files: `orders.csv`, `order_products__prior.csv`, `products.csv`, `aisles.csv`, and `departments.csv`. The training-order product file is not used in this phase.
 
 ### Features
 
@@ -33,15 +35,15 @@ Since the project uses unsupervised association analysis, no supervised target v
 
 ### Analysis Scope
 
-A reproducible sample of **30,000 prior orders**, selected using random seed 42, was used for the Phase 1 analysis.
+A reproducible random sample of **30,000 prior orders**, selected using random seed 42, was used for the Phase 1 analysis. This is not a chronological split. All product lines belonging to each selected order are retained, preserving complete transaction baskets.
 
 The sample contains:
 
-- 30,000 orders
-- 302,305 product purchase records
+- 30,000 selected prior orders
+- 302,305 cleaned product purchase records
 - 30,000 non-empty shopping baskets
 
-The original dataset is available through Kaggle. Raw CSV files are excluded from the GitHub repository due to their size.
+The original Kaggle CSV files must be downloaded separately and placed in `data/raw/`. They are not bundled with the repository and are excluded from Git due to their size.
 
 ## Project Structure
 
@@ -113,7 +115,7 @@ The analysis of 30,000 prior orders produced the following observations:
 | Most frequent ordering hour | 10 |
 | Reordered product rate | Approximately 59.2% |
 
-These findings represent the selected sample rather than the entire dataset. Encoded day values are retained without assuming specific weekday names.
+These findings represent the selected sample rather than the entire dataset. Encoded day values are retained without assuming specific weekday names. The reorder rate is calculated across cleaned product purchase records.
 
 ## Technologies Used
 
@@ -144,7 +146,15 @@ python -m pip install -r requirements.txt
 
 ### 3. Prepare the dataset
 
-Download the original Instacart dataset from Kaggle, extract the CSV files, and place them inside `data/raw/`.
+Download the original Instacart dataset from Kaggle, extract the five required CSV files, and place them inside `Phase1/data/raw/`:
+
+- `orders.csv`
+- `order_products__prior.csv`
+- `products.csv`
+- `aisles.csv`
+- `departments.csv`
+
+The `order_products__train.csv` file is not required by the Phase 1 pipeline.
 
 ### 4. Run the preprocessing and analysis pipeline
 
@@ -175,6 +185,8 @@ The Phase 1 implementation provides:
 - Seven EDA visualizations
 - Written findings and statistical summaries
 - Reproducible Python scripts and Jupyter notebooks
+
+Processed CSV files are generated locally by the pipeline and are excluded from Git. The cleaning report, EDA visualizations, and findings are maintained as repository outputs.
 
 ## Next Phase
 

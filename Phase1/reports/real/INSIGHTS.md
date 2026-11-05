@@ -5,7 +5,7 @@
 - Most frequent product: Banana (4,310 order lines).
 - Most frequently represented department: produce (87,854 order lines).
 - Most common encoded day: 0; peak order hour: 10:00.
-- Reordered flag prevalence across cleaned order lines: 59.2%. This is not a classification target for Phase 1.
+- Reorder flag prevalence across cleaned product purchase lines: 59.2%. This is not a classification target for Phase 1.
 
 ## Visualization explanations
 

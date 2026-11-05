@@ -1,4 +1,4 @@
-"""Run Phase 1 cleaning and EDA on bundled REAL Instacart sample."""
+"""Run Phase 1 cleaning and EDA on a reproducible sample of original Instacart data."""
 import argparse
 from scripts.pipeline import ROOT,run
 from scripts.eda import make_charts

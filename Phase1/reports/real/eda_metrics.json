@@ -4,6 +4,7 @@
   "mean_basket_size": 10.076833333333333,
   "median_basket_size": 8.0,
   "reordered_rate": 0.5924811035212781,
+  "reorder_rate_basis": "Cleaned product purchase lines",
   "top_product": "Banana",
   "top_department": "produce",
   "peak_hour": 10,
