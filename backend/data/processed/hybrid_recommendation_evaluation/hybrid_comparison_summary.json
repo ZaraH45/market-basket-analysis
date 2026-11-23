@@ -1,0 +1,101 @@
+{
+    "training_baskets": 26586,
+    "test_baskets": 3414,
+    "test_users": 3414,
+    "rules_mined": 41,
+    "users_with_activated_rules": 1795,
+    "users_with_rule_recommendations": 1635,
+    "users_with_hybrid_recommendations": 3414,
+    "rule_activation_coverage": 0.525776215582894,
+    "rule_recommendation_coverage": 0.4789103690685413,
+    "hybrid_recommendation_coverage": 1.0,
+    "total_rule_activations": 5088,
+    "total_unique_rule_candidates": 2809,
+    "popularity_products": 24081,
+    "recommendation_method": "association_rules_first_then_popularity_fallback",
+    "ranking": [
+        "association-rule confidence descending",
+        "association-rule lift descending",
+        "association-rule support descending",
+        "product ID ascending for rule ties",
+        "popularity basket frequency descending for fallback",
+        "product ID ascending for popularity ties"
+    ],
+    "excludes_latest_training_basket_products": true,
+    "precision_denominator": "K",
+    "k_values": [
+        5,
+        10,
+        20
+    ],
+    "algorithm": "fpgrowth",
+    "min_support": 0.005,
+    "min_confidence": 0.2,
+    "min_lift": 1.0,
+    "max_len": 3,
+    "metrics": [
+        {
+            "method": "popularity",
+            "k": 5,
+            "precision_at_k": 0.06748681898066784,
+            "recall_at_k": 0.04513062164314746,
+            "hit_rate_at_k": 0.27826596367896894
+        },
+        {
+            "method": "popularity",
+            "k": 10,
+            "precision_at_k": 0.05231400117164617,
+            "recall_at_k": 0.06608136305713579,
+            "hit_rate_at_k": 0.36818980667838314
+        },
+        {
+            "method": "popularity",
+            "k": 20,
+            "precision_at_k": 0.03968951376684242,
+            "recall_at_k": 0.1001473390716161,
+            "hit_rate_at_k": 0.45987111892208554
+        },
+        {
+            "method": "association_rules",
+            "k": 5,
+            "precision_at_k": 0.017691857059168134,
+            "recall_at_k": 0.010767913846118955,
+            "hit_rate_at_k": 0.0837727006444054
+        },
+        {
+            "method": "association_rules",
+            "k": 10,
+            "precision_at_k": 0.008845928529584067,
+            "recall_at_k": 0.010767913846118955,
+            "hit_rate_at_k": 0.0837727006444054
+        },
+        {
+            "method": "association_rules",
+            "k": 20,
+            "precision_at_k": 0.0044229642647920335,
+            "recall_at_k": 0.010767913846118955,
+            "hit_rate_at_k": 0.0837727006444054
+        },
+        {
+            "method": "hybrid",
+            "k": 5,
+            "precision_at_k": 0.06836555360281195,
+            "recall_at_k": 0.045625106867979506,
+            "hit_rate_at_k": 0.2817809021675454
+        },
+        {
+            "method": "hybrid",
+            "k": 10,
+            "precision_at_k": 0.052519039250146456,
+            "recall_at_k": 0.06639734508005983,
+            "hit_rate_at_k": 0.36965436438195665
+        },
+        {
+            "method": "hybrid",
+            "k": 20,
+            "precision_at_k": 0.03968951376684242,
+            "recall_at_k": 0.1001473390716161,
+            "hit_rate_at_k": 0.45987111892208554
+        }
+    ]
+}

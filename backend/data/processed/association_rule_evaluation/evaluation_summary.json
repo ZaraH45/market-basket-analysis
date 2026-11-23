@@ -1,0 +1,20 @@
+{
+    "training_baskets": 26586,
+    "test_baskets": 3414,
+    "test_users": 3414,
+    "rules_mined": 41,
+    "test_users_with_at_least_one_activated_rule": 1795,
+    "test_coverage": 0.525776215582894,
+    "total_rule_activations": 5088,
+    "successful_rule_activations": 430,
+    "rule_success_rate": 0.0845125786163522,
+    "predicted_consequent_items": 3857,
+    "correctly_predicted_consequent_items": 430,
+    "consequent_item_precision": 0.11148561057816957,
+    "mean_activated_rules_per_test_user": 1.4903339191564147,
+    "algorithm": "fpgrowth",
+    "min_support": 0.005,
+    "min_confidence": 0.2,
+    "min_lift": 1.0,
+    "max_len": 3
+}

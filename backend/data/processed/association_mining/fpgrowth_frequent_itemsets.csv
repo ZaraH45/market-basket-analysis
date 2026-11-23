@@ -1,0 +1,336 @@
+product_ids,product_names,itemset_length,support
+24852,Banana,1,0.14366666666666666
+13176,Bag of Organic Bananas,1,0.11693333333333333
+21137,Organic Strawberries,1,0.0839
+21903,Organic Baby Spinach,1,0.0773
+47209,Organic Hass Avocado,1,0.0676
+47766,Organic Avocado,1,0.053233333333333334
+47626,Large Lemon,1,0.048666666666666664
+26209,Limes,1,0.044366666666666665
+27845,Organic Whole Milk,1,0.0435
+16797,Strawberries,1,0.04223333333333333
+27966,Organic Raspberries,1,0.0419
+22935,Organic Yellow Onion,1,0.0369
+24964,Organic Garlic,1,0.03356666666666667
+45007,Organic Zucchini,1,0.0315
+39275,Organic Blueberries,1,0.0312
+49683,Cucumber Kirby,1,0.029166666666666667
+28204,Organic Fuji Apple,1,0.0279
+4920,Seedless Red Grapes,1,0.027333333333333334
+5876,Organic Lemon,1,0.027266666666666668
+8277,Apple Honeycrisp Organic,1,0.026833333333333334
+40706,Organic Grape Tomatoes,1,0.026
+30391,Organic Cucumber,1,0.024266666666666666
+45066,Honeycrisp Apple,1,0.024
+44632,Sparkling Water Grapefruit,1,0.023866666666666668
+49235,Organic Half & Half,1,0.0238
+17794,Carrots,1,0.023733333333333332
+21616,Organic Baby Arugula,1,0.023466666666666667
+30489,Original Hummus,1,0.023366666666666668
+42265,Organic Baby Carrots,1,0.023333333333333334
+19057,Organic Large Extra Fancy Fuji Apple,1,0.0228
+4605,Yellow Onions,1,0.022166666666666668
+44359,Organic Small Bunch Celery,1,0.021966666666666666
+37646,Organic Gala Apples,1,0.0218
+27086,Half & Half,1,0.021566666666666668
+27104,Fresh Cauliflower,1,0.021333333333333333
+28985,Michigan Organic Kale,1,0.021266666666666666
+31717,Organic Cilantro,1,0.0212
+46979,Asparagus,1,0.020633333333333333
+8518,Organic Red Onion,1,0.020166666666666666
+26604,Organic Blackberries,1,0.0191
+41950,Organic Tomato Cluster,1,0.019033333333333333
+22035,Organic Whole String Cheese,1,0.018733333333333334
+34126,Organic Italian Parsley Bunch,1,0.0185
+43352,Raspberries,1,0.0185
+35951,Organic Unsweetened Almond Milk,1,0.018133333333333335
+39877,Organic Granny Smith Apple,1,0.018133333333333335
+5077,100% Whole Wheat Bread,1,0.018
+9076,Blueberries,1,0.017566666666666668
+10749,Organic Red Bell Pepper,1,0.017233333333333333
+19660,Spring Water,1,0.0172
+43961,Organic Peeled Whole Baby Carrots,1,0.017133333333333334
+34969,Red Vine Tomato,1,0.017
+48679,Organic Garnet Sweet Potato (Yam),1,0.016566666666666667
+12341,Hass Avocados,1,0.016433333333333335
+5785,Organic Reduced Fat 2% Milk,1,0.016266666666666665
+31506,Extra Virgin Olive Oil,1,0.016166666666666666
+24184,Red Peppers,1,0.0161
+46667,Organic Ginger Root,1,0.015933333333333334
+22825,Organic D'Anjou Pears,1,0.015833333333333335
+21938,Green Bell Pepper,1,0.0153
+39928,Organic Kiwi,1,0.014866666666666667
+24838,Unsweetened Almondmilk,1,0.0148
+5450,Small Hass Avocado,1,0.014733333333333333
+25890,Boneless Skinless Chicken Breasts,1,0.014533333333333334
+33198,Sparkling Natural Mineral Water,1,0.014333333333333333
+28842,Bunched Cilantro,1,0.0142
+46906,Grape White/Green Seedless,1,0.0136
+35221,Lime Sparkling Water,1,0.0134
+44142,Red Onion,1,0.013333333333333334
+8174,Organic Navel Orange,1,0.013266666666666666
+43122,Organic Bartlett Pear,1,0.013233333333333333
+20114,Jalapeno Peppers,1,0.013166666666666667
+33731,Grated Parmesan,1,0.013133333333333334
+27521,Organic Lacinato (Dinosaur) Kale,1,0.0127
+27344,Uncured Genoa Salami,1,0.012666666666666666
+28199,"Clementines, Bag",1,0.0125
+9839,Organic Broccoli,1,0.0124
+15290,Orange Bell Pepper,1,0.012333333333333333
+8424,Broccoli Crown,1,0.0123
+27156,Organic Black Beans,1,0.0122
+18465,Organic Grade A Free Range Large Brown Eggs,1,0.012133333333333333
+23909,2% Reduced Fat Milk,1,0.011933333333333334
+4210,Whole Milk,1,0.011733333333333333
+196,Soda,1,0.011666666666666667
+34243,Organic Baby Broccoli,1,0.011533333333333333
+11520,Large Alfresco Eggs,1,0.0115
+42736,Unsalted Butter,1,0.011466666666666667
+47144,Unsweetened Original Almond Breeze Almond Milk,1,0.011366666666666667
+34358,Garlic,1,0.0113
+3957,100% Raw Coconut Water,1,0.011166666666666667
+9387,Granny Smith Apples,1,0.011133333333333334
+16759,Organic Carrot Bunch,1,0.0111
+29487,Roma Tomato,1,0.011033333333333332
+4799,Shredded Parmesan,1,0.010966666666666666
+38689,Organic Reduced Fat Milk,1,0.010766666666666667
+41220,Organic Romaine Lettuce,1,0.0107
+7781,Organic Sticks Low Moisture Part Skim Mozzarella String Cheese,1,0.0105
+41787,Bartlett Pears,1,0.010433333333333333
+432,Vanilla Almond Breeze Almond Milk,1,0.010433333333333333
+20995,Organic Broccoli Florets,1,0.010366666666666666
+19678,Organic Russet Potato,1,0.010333333333333333
+33000,Pure Irish Butter,1,0.0103
+37687,Organic Spring Mix,1,0.010233333333333334
+21709,Sparkling Lemon Water,1,0.01
+30233,Organic Large Brown Grade AA Cage Free Eggs,1,0.0098
+5479,Italian Sparkling Mineral Water,1,0.0098
+40604,Feta Cheese Crumbles,1,0.0096
+6184,Clementines,1,0.0096
+16185,Sharp Cheddar Cheese,1,0.009566666666666666
+26369,Organic Roma Tomato,1,0.009533333333333333
+14992,Green Beans,1,0.009433333333333334
+33754,Total 2% with Strawberry Lowfat Greek Strained Yogurt,1,0.009433333333333334
+25659,Organic Coconut Milk,1,0.0094
+17948,Frozen Organic Wild Blueberries,1,0.0093
+31343,Shredded Mild Cheddar Cheese,1,0.009266666666666666
+22963,Organic Roasted Turkey Breast,1,0.0092
+19348,Fat Free Milk,1,0.009166666666666667
+14947,Pure Sparkling Water,1,0.009133333333333334
+42828,Whipped Cream Cheese,1,0.0091
+1463,Organic Milk,1,0.008966666666666666
+42585,Organic Extra Firm Tofu,1,0.008966666666666666
+8021,100% Recycled Paper Towels,1,0.008933333333333333
+8193,Russet Potato,1,0.0088
+24489,Organic Whole Strawberries,1,0.008733333333333333
+42768,Organic Garbanzo Beans,1,0.0087
+28849,No Salt Added Black Beans,1,0.008666666666666666
+11777,Red Raspberries,1,0.008633333333333333
+36695,Organic Hothouse Cucumbers,1,0.008466666666666667
+21405,"Organic Red Radish, Bunch",1,0.008433333333333333
+39475,Total Greek Strained Yogurt,1,0.008366666666666666
+5212,Watermelon Chunks,1,0.008366666666666666
+43789,Organic Basil,1,0.008333333333333333
+32655,Organic Large Grade AA Brown Eggs,1,0.0083
+13870,Lightly Salted Baked Snap Pea Crisps,1,0.0082
+32689,Romaine Hearts,1,0.008133333333333333
+20842,Total 0% Greek Yogurt,1,0.0081
+5025,Green Onions,1,0.008066666666666666
+10246,Organic Celery Hearts,1,0.008
+36011,Organic Fat Free Milk,1,0.008
+18531,Organic Heavy Whipping Cream,1,0.007966666666666667
+39408,Gala Apples,1,0.0079
+43295,Unsweetened Vanilla Almond Milk,1,0.0079
+38293,Ground Turkey Breast,1,0.007833333333333333
+42701,Organic Sour Cream,1,0.007833333333333333
+46676,Total 0% Nonfat Greek Yogurt,1,0.007833333333333333
+23734,Sour Cream,1,0.0075
+890,Organic Diced Tomatoes,1,0.007466666666666667
+25146,Original Orange Juice,1,0.0074333333333333335
+43768,Organic Bell Pepper,1,0.0074333333333333335
+41844,Honey Nut Cheerios,1,0.0074
+1940,Organic 2% Reduced Fat Milk,1,0.0073
+44987,Heavy Whipping Cream,1,0.0073
+24830,Organic Romaine,1,0.007266666666666667
+31553,Fresh Ginger Root,1,0.007266666666666667
+46802,Pineapple Chunks,1,0.007266666666666667
+18362,Organic Bread with 21 Whole Grains,1,0.0072
+260,Cantaloupe,1,0.0072
+29447,"Milk, Organic, Vitamin D",1,0.0072
+44683,Brussels Sprouts,1,0.007166666666666667
+47672,Uncured Hickory Smoked Sunday Bacon,1,0.007166666666666667
+2295,Yellow Bell Pepper,1,0.007066666666666666
+35108,Salted Butter,1,0.007033333333333333
+11182,Baby Spinach,1,0.007
+38383,Organic White Onions,1,0.007
+30450,Creamy Almond Butter,1,0.006933333333333333
+43772,Cherubs Heavenly Salad Tomatoes,1,0.006933333333333333
+29987,Shredded Mozzarella,1,0.0069
+46969,Organic Bosc Pear,1,0.0069
+18523,Total 2% All Natural Greek Strained Yogurt with Honey,1,0.006833333333333334
+35939,Organic Jalapeno Pepper,1,0.0067666666666666665
+44910,Organic Spring Mix Salad,1,0.0067666666666666665
+21288,Blackberries,1,0.006633333333333333
+2078,Unsalted Pure Irish Butter,1,0.0066
+23375,Marinara Sauce,1,0.0066
+34448,Original Veggie Straws,1,0.0066
+13984,Organic Mint,1,0.006533333333333334
+16953,Creamy Peanut Butter,1,0.0065
+30776,Organic Raw Kombucha Gingerade,1,0.0064
+38777,Organic Green Seedless Grapes,1,0.0064
+38159,Organic Yellow Peaches,1,0.006366666666666666
+6046,Boneless Skinless Chicken Breast,1,0.006366666666666666
+28289,Organic Shredded Carrots,1,0.006333333333333333
+2966,Pure Coconut Water,1,0.006266666666666667
+14678,Organic Frozen Peas,1,0.006233333333333333
+4957,Total 2% Lowfat Greek Strained Yogurt With Blueberry,1,0.006233333333333333
+16349,Organic Yams,1,0.0062
+41290,Lemonade,1,0.0062
+26620,Peach Pear Flavored Sparkling Water,1,0.006166666666666667
+37067,Organic Banana,1,0.006166666666666667
+18027,Ezekiel 4:9 Bread Organic Sprouted Whole Grain,1,0.0061333333333333335
+31683,Original No Pulp 100% Florida Orange Juice,1,0.0061333333333333335
+39812,Organic Thyme,1,0.0061333333333333335
+40310,Oven Roasted Turkey Breast,1,0.0061333333333333335
+7948,Organic Unsalted Butter,1,0.0061333333333333335
+38456,Large Grapefruit,1,0.006066666666666666
+26940,Organic Large Green Asparagus,1,0.006033333333333333
+32864,Organic Baby Rainbow Carrots,1,0.006033333333333333
+18370,Organic Shredded Mozzarella,1,0.006
+19048,Organic Butternut Squash,1,0.006
+25931,Organic Baby Spinach Salad,1,0.006
+28465,Icelandic Style Skyr Blueberry Non-fat Yogurt,1,0.005966666666666667
+37158,Chicken & Maple Breakfast Sausage,1,0.005966666666666667
+10957,Fridge Pack Cola,1,0.0059
+26165,Electrolyte Enhanced Water,1,0.0059
+17600,"YoKids Squeezers Organic Low-Fat Yogurt, Strawberry",1,0.005866666666666667
+23165,Organic Leek,1,0.005866666666666667
+39984,Organic Dill,1,0.005866666666666667
+43713,Organic Creamy Peanut Butter,1,0.005833333333333334
+39619,Organic Tomato Basil Pasta Sauce,1,0.0057666666666666665
+47734,Organic Green Cabbage,1,0.0057666666666666665
+48364,Sweet Onion,1,0.0057666666666666665
+40396,Guacamole,1,0.0057
+43154,Sparkling Mineral Water,1,0.0057
+31040,Sea Salt Pita Chips,1,0.005666666666666667
+33120,Organic Egg Whites,1,0.005666666666666667
+44422,Organic Old Fashioned Rolled Oats,1,0.005666666666666667
+1158,Mango Chunks,1,0.005633333333333333
+45603,Trilogy Kombucha Drink,1,0.005633333333333333
+8859,Natural Spring Water,1,0.005633333333333333
+26283,White Corn,1,0.0056
+45535,Organic Low Sodium Chicken Broth,1,0.005566666666666667
+48745,Globe Eggplant,1,0.005566666666666667
+7021,Organic Tomato Paste,1,0.005566666666666667
+24799,Vanilla Skyr Nonfat Yogurt,1,0.005533333333333334
+10132,Organic American Cheese Singles,1,0.0055
+35547,Organic Baby Kale,1,0.0054666666666666665
+42450,Macaroni & Cheese,1,0.0054666666666666665
+3952,Organic Broccoli Crowns,1,0.005433333333333333
+28934,Frozen Broccoli Florets,1,0.0054
+33787,Total 2% Lowfat Greek Strained Yogurt with Peach,1,0.0054
+41665,Organic Mexican Blend Finely Shredded Cheese,1,0.0054
+45,European Cucumber,1,0.0054
+46654,Organic Grade A Large Brown Eggs,1,0.005366666666666666
+17872,Total 2% Lowfat Plain Greek Yogurt,1,0.005333333333333333
+45633,Organic Beef Hot Dogs,1,0.005333333333333333
+6187,Raisin Bran Cereal,1,0.0053
+34050,Orange Juice,1,0.005266666666666667
+2086,Sustainably Soft Bath Tissue,1,0.005233333333333334
+32478,Reduced Fat 2% Milk,1,0.005233333333333334
+30169,Total 2% All Natural Plain Greek Yogurt,1,0.005166666666666667
+39993,Vine Ripe Tomatoes,1,0.005166666666666667
+12206,Basil Pesto,1,0.0051333333333333335
+42625,"Flat Parsley, Bunch",1,0.0051333333333333335
+15937,Shallot,1,0.0051
+23288,Distilled Water,1,0.0051
+33768,Sinfully Sweet Campari Tomatoes,1,0.0051
+17461,Air Chilled Organic Boneless Skinless Chicken Breasts,1,0.005033333333333333
+21019,Roasted Red Pepper Hummus,1,0.005033333333333333
+40571,Total 2% Greek Strained Yogurt with Cherry 5.3 oz,1,0.005033333333333333
+6873,Organic Iceberg Lettuce,1,0.005033333333333333
+9339,Organic Chicken & Apple Sausage,1,0.005033333333333333
+36865,Non Fat Raspberry Yogurt,1,0.005
+13176|47209,Bag of Organic Bananas | Organic Hass Avocado,2,0.019566666666666666
+13176|21137,Bag of Organic Bananas | Organic Strawberries,2,0.019233333333333335
+21137|24852,Organic Strawberries | Banana,2,0.0175
+24852|47766,Banana | Organic Avocado,2,0.017
+21903|24852,Organic Baby Spinach | Banana,2,0.016166666666666666
+13176|21903,Bag of Organic Bananas | Organic Baby Spinach,2,0.015866666666666668
+21137|21903,Organic Strawberries | Organic Baby Spinach,2,0.013533333333333333
+21137|47209,Organic Strawberries | Organic Hass Avocado,2,0.013033333333333333
+13176|27966,Bag of Organic Bananas | Organic Raspberries,2,0.013
+24852|47626,Banana | Large Lemon,2,0.012833333333333334
+21903|47209,Organic Baby Spinach | Organic Hass Avocado,2,0.011866666666666666
+16797|24852,Strawberries | Banana,2,0.011766666666666667
+21137|27966,Organic Strawberries | Organic Raspberries,2,0.010766666666666667
+24852|26209,Banana | Limes,2,0.010666666666666666
+24852|28204,Banana | Organic Fuji Apple,2,0.010333333333333333
+24852|27845,Banana | Organic Whole Milk,2,0.01
+26209|47626,Limes | Large Lemon,2,0.01
+24852|47209,Banana | Organic Hass Avocado,2,0.009533333333333333
+21903|47766,Organic Baby Spinach | Organic Avocado,2,0.009466666666666667
+24852|49683,Banana | Cucumber Kirby,2,0.0093
+13176|27845,Bag of Organic Bananas | Organic Whole Milk,2,0.008833333333333334
+24852|45066,Banana | Honeycrisp Apple,2,0.008833333333333334
+21137|27845,Organic Strawberries | Organic Whole Milk,2,0.008066666666666666
+21903|47626,Organic Baby Spinach | Large Lemon,2,0.008066666666666666
+4920|24852,Seedless Red Grapes | Banana,2,0.008066666666666666
+13176|22935,Bag of Organic Bananas | Organic Yellow Onion,2,0.008033333333333333
+22935|24964,Organic Yellow Onion | Organic Garlic,2,0.008033333333333333
+27966|47209,Organic Raspberries | Organic Hass Avocado,2,0.008033333333333333
+21137|39275,Organic Strawberries | Organic Blueberries,2,0.007966666666666667
+47626|47766,Large Lemon | Organic Avocado,2,0.007833333333333333
+8277|13176,Apple Honeycrisp Organic | Bag of Organic Bananas,2,0.007666666666666666
+21137|47766,Organic Strawberries | Organic Avocado,2,0.007566666666666667
+21903|26209,Organic Baby Spinach | Limes,2,0.007566666666666667
+26209|47766,Limes | Organic Avocado,2,0.007333333333333333
+24852|27966,Banana | Organic Raspberries,2,0.007266666666666667
+5876|13176,Organic Lemon | Bag of Organic Bananas,2,0.007233333333333333
+22935|47209,Organic Yellow Onion | Organic Hass Avocado,2,0.0069
+21903|24964,Organic Baby Spinach | Organic Garlic,2,0.006866666666666667
+13176|26209,Bag of Organic Bananas | Limes,2,0.0068
+5876|47209,Organic Lemon | Organic Hass Avocado,2,0.006733333333333333
+13176|30391,Bag of Organic Bananas | Organic Cucumber,2,0.0067
+13176|45007,Bag of Organic Bananas | Organic Zucchini,2,0.0067
+26209|47209,Limes | Organic Hass Avocado,2,0.006633333333333333
+13176|24964,Bag of Organic Bananas | Organic Garlic,2,0.006566666666666667
+21903|22935,Organic Baby Spinach | Organic Yellow Onion,2,0.006566666666666667
+13176|47766,Bag of Organic Bananas | Organic Avocado,2,0.0065
+13176|39275,Bag of Organic Bananas | Organic Blueberries,2,0.006366666666666666
+13176|19057,Bag of Organic Bananas | Organic Large Extra Fancy Fuji Apple,2,0.0063
+30391|47209,Organic Cucumber | Organic Hass Avocado,2,0.0063
+4605|24852,Yellow Onions | Banana,2,0.0063
+21903|45007,Organic Baby Spinach | Organic Zucchini,2,0.006233333333333333
+13176|47626,Bag of Organic Bananas | Large Lemon,2,0.0061333333333333335
+24852|30489,Banana | Original Hummus,2,0.0061333333333333335
+24852|40706,Banana | Organic Grape Tomatoes,2,0.0059
+21137|26209,Organic Strawberries | Limes,2,0.005833333333333334
+24964|47209,Organic Garlic | Organic Hass Avocado,2,0.005833333333333334
+8277|24852,Apple Honeycrisp Organic | Banana,2,0.005833333333333334
+24852|39275,Banana | Organic Blueberries,2,0.005733333333333333
+21137|47626,Organic Strawberries | Large Lemon,2,0.0057
+24852|24964,Banana | Organic Garlic,2,0.0056
+21137|30391,Organic Strawberries | Organic Cucumber,2,0.005566666666666667
+24852|45007,Banana | Organic Zucchini,2,0.005566666666666667
+13176|37646,Bag of Organic Bananas | Organic Gala Apples,2,0.005533333333333334
+21903|27845,Organic Baby Spinach | Organic Whole Milk,2,0.0055
+45007|47209,Organic Zucchini | Organic Hass Avocado,2,0.0055
+13176|16797,Bag of Organic Bananas | Strawberries,2,0.005433333333333333
+26209|31717,Limes | Organic Cilantro,2,0.005433333333333333
+21137|24964,Organic Strawberries | Organic Garlic,2,0.005333333333333333
+21137|22935,Organic Strawberries | Organic Yellow Onion,2,0.005233333333333334
+21903|27966,Organic Baby Spinach | Organic Raspberries,2,0.005233333333333334
+22935|24852,Organic Yellow Onion | Banana,2,0.005233333333333334
+21903|49683,Organic Baby Spinach | Cucumber Kirby,2,0.0052
+8277|21137,Apple Honeycrisp Organic | Organic Strawberries,2,0.0052
+21903|30391,Organic Baby Spinach | Organic Cucumber,2,0.0051333333333333335
+24852|28985,Banana | Michigan Organic Kale,2,0.0051333333333333335
+24852|37646,Banana | Organic Gala Apples,2,0.0051
+21616|24852,Organic Baby Arugula | Banana,2,0.005066666666666666
+47209|47626,Organic Hass Avocado | Large Lemon,2,0.005066666666666666
+13176|44359,Bag of Organic Bananas | Organic Small Bunch Celery,2,0.005033333333333333
+17794|24852,Carrots | Banana,2,0.005033333333333333
+13176|22035,Bag of Organic Bananas | Organic Whole String Cheese,2,0.005
+47626|49683,Large Lemon | Cucumber Kirby,2,0.005
+13176|21137|47209,Bag of Organic Bananas | Organic Strawberries | Organic Hass Avocado,3,0.005
