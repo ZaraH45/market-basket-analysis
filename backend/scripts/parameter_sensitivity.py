@@ -2,7 +2,7 @@
 import time
 import json
 import pandas as pd
-
+import numpy as np
 from pathlib import Path
 from backend.app.services.association_mining import (load_data, mine_association_patterns)
 
@@ -14,25 +14,45 @@ def compare_itemsets(apriori_results, fpgrowth_results):
     apriori_df = apriori_results["frequent_itemsets"]
     fpgrowth_df = fpgrowth_results["frequent_itemsets"]
 
-    apriori_set = set(apriori_df["product_ids"])
-    fpgrowth_set = set(fpgrowth_df["product_ids"])
+    apriori_metrics = apriori_df.set_index("product_ids")[["support"]]
+    fpgrowth_metrics = fpgrowth_df.set_index("product_ids")[["support"]]
 
-    return (len(apriori_set) == len(fpgrowth_set) and apriori_set == fpgrowth_set)
+    apriori_metrics = apriori_metrics.sort_index()
+    fpgrowth_metrics = fpgrowth_metrics.sort_index()
+
+    if not apriori_metrics.index.equals(fpgrowth_metrics.index):
+        return False
+
+    return np.allclose(
+        apriori_metrics.to_numpy(dtype=float),
+        fpgrowth_metrics.to_numpy(dtype=float),
+        rtol=1e-9,
+        atol=1e-12
+    )
 
 
 def compare_rules(apriori_results, fpgrowth_results):
     apriori_df = apriori_results["association_rules"]
     fpgrowth_df = fpgrowth_results["association_rules"]
 
-    columns = ["antecedent_ids", "consequent_ids"]
+    rule_columns = ["antecedent_ids", "consequent_ids"]
+    metric_columns = ["support", "confidence", "lift"]
 
-    apriori_set = set(tuple(row)
-        for row in apriori_df[columns].itertuples(index=False,name=None))
+    apriori_metrics = apriori_df.set_index(rule_columns)[metric_columns]
+    fpgrowth_metrics = fpgrowth_df.set_index(rule_columns)[metric_columns]
 
-    fpgrowth_set = set(tuple(row)
-        for row in fpgrowth_df[columns].itertuples(index=False, name=None))
+    apriori_metrics = apriori_metrics.sort_index()
+    fpgrowth_metrics = fpgrowth_metrics.sort_index()
 
-    return apriori_set == fpgrowth_set
+    if not apriori_metrics.index.equals(fpgrowth_metrics.index):
+        return False
+
+    return np.allclose(
+        apriori_metrics.to_numpy(dtype=float),
+        fpgrowth_metrics.to_numpy(dtype=float),
+        rtol=1e-9,
+        atol=1e-12
+    )
 
 
 def main():

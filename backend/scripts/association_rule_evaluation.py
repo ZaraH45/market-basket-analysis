@@ -60,28 +60,25 @@ def create_chronological_split():
     return train_df, latest_train_df, test_df
 
 
+
 def evaluate_rules(rules_df, latest_train_df, test_df, training_basket_count):
     previous_baskets = {}
     next_baskets = {}
 
     for _, row in latest_train_df.iterrows():
         user_id = int(row["user_id_basket"])
-
         previous_baskets[user_id] = parse_products(row["product_ids"])
 
     for _, row in test_df.iterrows():
         user_id = int(row["user_id_basket"])
-
         next_baskets[user_id] = parse_products(row["product_ids"])
 
-    # Every test user must have a previous training basket.
     if not set(next_baskets).issubset(set(previous_baskets)):
         raise ValueError("A test user does not have a previous training basket.")
 
     rule_records = []
 
     for _, rule in rules_df.iterrows():
-
         antecedents = parse_products(rule["antecedent_ids"])
         consequents = parse_products(rule["consequent_ids"])
 
@@ -108,22 +105,24 @@ def evaluate_rules(rules_df, latest_train_df, test_df, training_basket_count):
     total_predicted_items = 0
     total_matched_items = 0
 
-    # Singleton training users have no held-out next basket.
     for user_id, actual_next_products in next_baskets.items():
-
         previous_products = previous_baskets[user_id]
+
+        relevant_products = actual_next_products - previous_products
 
         for rule in rule_records:
 
             if rule["antecedents"].issubset(previous_products):
-
                 covered_users.add(user_id)
 
                 total_activations += 1
                 rule["activations"] += 1
 
-                predicted = rule["consequents"]
-                matched = predicted.intersection(actual_next_products)
+                predicted = rule["consequents"] - previous_products
+                matched = predicted.intersection(relevant_products)
+
+                if len(predicted) == 0:
+                    continue
 
                 total_predicted_items += len(predicted)
                 total_matched_items += len(matched)
@@ -131,19 +130,19 @@ def evaluate_rules(rules_df, latest_train_df, test_df, training_basket_count):
                 rule["predicted_items"] += len(predicted)
                 rule["matched_items"] += len(matched)
 
-                if predicted.issubset(actual_next_products):
+                if predicted.issubset(relevant_products):
                     total_exact_matches += 1
                     rule["exact_matches"] += 1
 
     test_count = len(test_df)
 
     if total_activations > 0:
-        rule_success_rate = (total_exact_matches / total_activations)
+        rule_success_rate = total_exact_matches / total_activations
     else:
         rule_success_rate = 0.0
 
     if total_predicted_items > 0:
-        consequent_item_precision = (total_matched_items / total_predicted_items)
+        consequent_item_precision = total_matched_items / total_predicted_items
     else:
         consequent_item_precision = 0.0
 
@@ -157,7 +156,7 @@ def evaluate_rules(rules_df, latest_train_df, test_df, training_basket_count):
     for rule in rule_records:
 
         if rule["activations"] > 0:
-            success_rate = (rule["exact_matches"] / rule["activations"])
+            success_rate = rule["exact_matches"] / rule["activations"]
         else:
             success_rate = None
 
@@ -179,7 +178,11 @@ def evaluate_rules(rules_df, latest_train_df, test_df, training_basket_count):
     per_rule_df = pd.DataFrame(per_rule_results)
 
     if not per_rule_df.empty:
-        per_rule_df = per_rule_df.sort_values(["activations", "heldout_success_rate"], ascending=[False, False], na_position="last").reset_index(drop=True)
+        per_rule_df = per_rule_df.sort_values(
+            ["activations", "heldout_success_rate"],
+            ascending=[False, False],
+            na_position="last"
+        ).reset_index(drop=True)
 
     summary = {
         "training_baskets": training_basket_count,
@@ -194,10 +197,13 @@ def evaluate_rules(rules_df, latest_train_df, test_df, training_basket_count):
         "predicted_consequent_items": total_predicted_items,
         "correctly_predicted_consequent_items": total_matched_items,
         "consequent_item_precision": consequent_item_precision,
-        "mean_activated_rules_per_test_user": (total_activations / test_count if test_count > 0 else 0.0)
+        "mean_activated_rules_per_test_user": (
+            total_activations / test_count if test_count > 0 else 0.0
+        )
     }
 
     return summary, per_rule_df
+
 
 
 def main():

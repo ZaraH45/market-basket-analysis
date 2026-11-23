@@ -1,0 +1,12 @@
+{
+    "transactions": 30000,
+    "products_before_filtering": 24876,
+    "products_after_filtering": 252,
+    "minimum_basket_count": 150,
+    "frequent_itemset_count": 335,
+    "association_rule_count": 49,
+    "min_support": 0.005,
+    "min_confidence": 0.2,
+    "min_lift": 1.0,
+    "max_len": 3
+}
