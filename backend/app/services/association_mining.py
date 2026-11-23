@@ -116,27 +116,18 @@ def build_sparse_matrix(transactions, min_support):
 
 
 def format_itemsets(itemsets_df, product_names):
+
     result = itemsets_df.copy()
 
-    result["product_ids"] = result["itemsets"].apply(
-        lambda items: "|".join(
-            str(int(product_id))
-            for product_id in sorted(items, key=int)
-        )
-    )
-
-    result["product_names"] = result["itemsets"].apply(
-        lambda items: " | ".join(
-            product_names.get(int(product_id), "Unknown product")
-            for product_id in sorted(items, key=int)
-        )
+    result["product_ids"] = result["itemsets"].apply(lambda items: "|".join(str(int(product_id)) for product_id in sorted(items, key=int)))
+    result["product_names"] = result["itemsets"].apply(lambda items: " | ".join(product_names.get(int(product_id), "Unknown product")
+            for product_id in sorted(items, key=int))
     )
 
     result["itemset_length"] = result["itemsets"].apply(len)
-
     result = result.drop(columns=["itemsets"])
 
-    result = result[["product_ids", "product_names", "itemset_length", "support"]]
+    result = result[[ "product_ids", "product_names", "itemset_length", "support"]]
 
     return result.sort_values(by=["itemset_length", "support", "product_ids"], ascending=[True, False, True]).reset_index(drop=True)
 
