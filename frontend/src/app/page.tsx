@@ -236,9 +236,6 @@ export default function Home() {
             <p className="font-bold text-[#246b45]">Basketly</p>
             <p className="mt-1 text-xs">A smarter way to shop for groceries.</p>
           </div>
-          <p className="text-xs">
-            Market Basket Analysis Project · CS4048
-          </p>
         </div>
       </footer>
     </main>

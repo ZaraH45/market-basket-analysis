@@ -62,7 +62,7 @@ def get_overview():
 
     return {
         "dataset": {
-            "transactions": fpgrowth_stats["transactions"],
+            "transactions": apriori_stats["transactions"],
             "products_before_filtering": (fpgrowth_stats["products_before_filtering"]),
             "products_after_filtering": (fpgrowth_stats["products_after_filtering"])
         },

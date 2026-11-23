@@ -14,11 +14,6 @@ export default function AnalyticsLayout({children,}: Readonly<{children: React.R
         <section className="min-w-0 flex-1">{children}</section>
       </main>
 
-      <footer className="mt-10 border-t border-[#e9ede7] bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-6 text-center text-xs text-gray-400 sm:px-8">
-          Basketly · Market Basket Analysis Project · CS4048
-        </div>
-      </footer>
     </div>
   );
 }
