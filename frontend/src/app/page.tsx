@@ -3,25 +3,8 @@
 
 import { useState } from "react";
 
-const categories = [
-  { name: "Fruits & Vegetables", icon: "🥑", color: "bg-green-100" },
-  { name: "Dairy & Eggs", icon: "🥛", color: "bg-blue-100" },
-  { name: "Bakery", icon: "🍞", color: "bg-orange-100" },
-  { name: "Snacks", icon: "🍿", color: "bg-yellow-100" },
-  { name: "Beverages", icon: "🥤", color: "bg-purple-100" },
-  { name: "Frozen Foods", icon: "🧊", color: "bg-cyan-100" },
-];
-
-const products = [
-  { id: 1, name: "Fresh Bananas", category: "Fruits & Vegetables", icon: "🍌", price: "2.49", tag: "Popular" },
-  { id: 2, name: "Fresh Milk", category: "Dairy & Eggs", icon: "🥛", price: "3.29", tag: "Fresh" },
-  { id: 3, name: "Whole Wheat Bread", category: "Bakery", icon: "🍞", price: "2.99", tag: "Bestseller" },
-  { id: 4, name: "Farm Fresh Eggs", category: "Dairy & Eggs", icon: "🥚", price: "4.49", tag: "Popular" },
-  { id: 5, name: "Fresh Strawberries", category: "Fruits & Vegetables", icon: "🍓", price: "3.99", tag: "Fresh" },
-  { id: 6, name: "Potato Chips", category: "Snacks", icon: "🍟", price: "1.99", tag: "Popular" },
-  { id: 7, name: "Orange Juice", category: "Beverages", icon: "🧃", price: "3.49", tag: "Fresh" },
-  { id: 8, name: "Ice Cream", category: "Frozen Foods", icon: "🍦", price: "4.99", tag: "New" },
-];
+import Link from "next/link";
+import { categories, products, categoryUrl } from "@/lib/catalog";
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -38,27 +21,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#f8faf7] text-gray-800">
 
-      {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b border-gray-100 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-6 py-4">
 
-          <a href="#" className="text-2xl font-extrabold text-green-700">
-            🛒 Basketly
-          </a>
-
-          <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-            <a href="#" className="text-green-700">Home</a>
-            <a href="#categories" className="hover:text-green-700">Categories</a>
-            <a href="#products" className="hover:text-green-700">All Products</a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a href="#products" className="rounded-full bg-green-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-green-800">
-              Explore Products
-            </a>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="mx-auto max-w-7xl px-6 py-12 md:py-20">
@@ -82,7 +45,9 @@ export default function Home() {
 
             <div className="mt-8 flex max-w-xl overflow-hidden rounded-xl bg-white p-2">
               <input
-                type="text"
+                type="search"
+                aria-label="Search products"
+                onKeyDown={(e) => { if (e.key === "Enter") document.getElementById("products")?.scrollIntoView({ behavior: "smooth" }); }}
                 placeholder="Search your favourite products..."
                 value={search}
                 onChange={(e) => {
@@ -118,33 +83,25 @@ export default function Home() {
             </p>
             <h2 className="mt-2 text-3xl font-bold">Explore Categories</h2>
           </div>
-          <a href="#products" className="text-sm font-semibold text-green-700">
-            View products →
-          </a>
+          <Link href="/categories" className="text-sm font-semibold text-green-700">View all categories →</Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
           {categories.map((category) => (
-            <button
-              key={category.name}
-              onClick={() => {
-                setSelectedCategory(category.name);
-                setSearch("");
-                document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
-              }}
+            <Link key={category.name} href={categoryUrl(category.name)}
               className={`${category.color} rounded-2xl p-5 text-center transition hover:-translate-y-1 hover:shadow-md`}
             >
               <div className="text-4xl">{category.icon}</div>
               <p className="mt-4 text-sm font-bold text-gray-800">
                 {category.name}
               </p>
-            </button>
+            </Link>
           ))}
         </div>
       </section>
 
       {/* Products */}
-      <section id="products" className="mx-auto max-w-7xl px-6 py-14">
+      <section id="products" className="scroll-mt-28 mx-auto max-w-7xl px-6 py-14">
         <div className="mb-8">
           <p className="text-sm font-semibold uppercase tracking-widest text-green-700">
             Our collection
@@ -176,14 +133,14 @@ export default function Home() {
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
             {filteredProducts.map((product) => (
-              <div
+              <Link href={`/products/${product.id}`}
                 key={product.id}
                 className="overflow-hidden rounded-2xl border border-gray-100 bg-white transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative flex h-44 items-center justify-center bg-[#f1f7ef] text-7xl">
                   {product.icon}
                   <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold text-green-700">
-                    {product.tag}
+                    View details
                   </span>
                 </div>
 
@@ -199,7 +156,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         ) : (
@@ -233,9 +190,9 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap gap-6 text-sm text-gray-300">
-            <a href="#" className="hover:text-green-400">Home</a>
-            <a href="#categories" className="hover:text-green-400">Categories</a>
-            <a href="#products" className="hover:text-green-400">Products</a>
+            <Link href="/" className="hover:text-green-400">Home</Link>
+            <Link href="/categories" className="hover:text-green-400">Categories</Link>
+            <Link href="/products" className="hover:text-green-400">Products</Link>
           </div>
         </div>
 

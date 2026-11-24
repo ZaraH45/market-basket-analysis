@@ -1,20 +1,11 @@
 
 import Link from "next/link";
 
-const categories = [
-  { name: "Fresh Produce", icon: "🥑", count: "Fruits & vegetables" },
-  { name: "Dairy & Eggs", icon: "🥛", count: "Milk, cheese & eggs" },
-  { name: "Snacks", icon: "🍿", count: "Chips & snacks" },
-  { name: "Beverages", icon: "🥤", count: "Drinks & juices" },
-  { name: "Bakery", icon: "🍞", count: "Bread & bakery items" },
-  { name: "Meat & Seafood", icon: "🍗", count: "Fresh meat & seafood" },
-  { name: "Frozen Foods", icon: "🧊", count: "Frozen products" },
-  { name: "Pantry", icon: "🥫", count: "Daily essentials" },
-];
+import { categories, categoryUrl } from "@/lib/catalog";
 
 export default function CategoriesPage() {
   return (
-    <main style={{ background: "#f8faf5", minHeight: "100vh", padding: "40px 7%" }}>
+    <main style={{ background: "#f8faf5", color: "#183d2b", minHeight: "100vh", padding: "40px 7%" }}>
       <Link href="/" style={{ color: "#28784b", textDecoration: "none" }}>
         ← Back to Home
       </Link>
@@ -35,7 +26,7 @@ export default function CategoriesPage() {
         {categories.map((category) => (
           <Link
             key={category.name}
-            href={`/products?category=${encodeURIComponent(category.name)}`}
+            href={categoryUrl(category.name)}
             style={{ textDecoration: "none" }}
           >
             <div style={{

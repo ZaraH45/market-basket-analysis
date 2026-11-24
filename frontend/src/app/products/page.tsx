@@ -1,22 +1,13 @@
 
 import Link from "next/link";
 
-const products = [
-  { id: 1, name: "Banana", category: "Fresh Produce", price: "$1.49", icon: "🍌" },
-  { id: 2, name: "Strawberries", category: "Fresh Produce", price: "$3.99", icon: "🍓" },
-  { id: 3, name: "Whole Milk", category: "Dairy & Eggs", price: "$2.79", icon: "🥛" },
-  { id: 4, name: "Cheddar Cheese", category: "Dairy & Eggs", price: "$4.49", icon: "🧀" },
-  { id: 5, name: "Potato Chips", category: "Snacks", price: "$2.99", icon: "🍟" },
-  { id: 6, name: "Orange Juice", category: "Beverages", price: "$3.49", icon: "🧃" },
-  { id: 7, name: "White Bread", category: "Bakery", price: "$2.49", icon: "🍞" },
-  { id: 8, name: "Chicken", category: "Meat & Seafood", price: "$6.99", icon: "🍗" },
-  { id: 9, name: "Eggs", category: "Dairy & Eggs", price: "$3.29", icon: "🥚" },
-  { id: 10, name: "Apples", category: "Fresh Produce", price: "$2.99", icon: "🍎" },
-  { id: 11, name: "Ice Cream", category: "Frozen Foods", price: "$4.99", icon: "🍨" },
-  { id: 12, name: "Cereal", category: "Pantry", price: "$3.79", icon: "🥣" },
-];
+import { categories, products, categoryUrl } from "@/lib/catalog";
 
-export default function ProductsPage() {
+export default async function ProductsPage({ searchParams }: { searchParams: Promise<{ category?: string | string[]; q?: string | string[] }> }) {
+  const query = await searchParams;
+  const category = typeof query.category === "string" ? query.category : "";
+  const q = typeof query.q === "string" ? query.q : "";
+  const filtered = products.filter(p => (!category || p.category === category) && p.name.toLowerCase().includes(q.toLowerCase().trim()));
   return (
     <main style={{ background: "#f8faf5", minHeight: "100vh", padding: "40px 7%" }}>
       <Link href="/" style={{ color: "#28784b", textDecoration: "none" }}>
@@ -24,19 +15,30 @@ export default function ProductsPage() {
       </Link>
 
       <h1 style={{ fontSize: "36px", color: "#183d2b", marginTop: "30px" }}>
-        All Products
+        {category || "All Products"}
       </h1>
 
       <p style={{ color: "#68766d", marginBottom: "30px" }}>
         Explore our products and discover your everyday favourites.
       </p>
 
+      <form action="/products" className="mb-6 flex flex-wrap gap-3 text-gray-800">
+        {category && <input type="hidden" name="category" value={category} />}
+        <input name="q" defaultValue={q} aria-label="Search products" placeholder="Search products" className="rounded-lg border bg-white p-3" />
+        <button className="rounded-lg bg-green-700 px-5 text-white">Search</button>
+      </form>
+      <nav aria-label="Filter products" className="mb-8 flex flex-wrap gap-3">
+        <Link href="/products" className={`rounded-full border px-4 py-2 ${!category ? "bg-green-700 text-white" : "bg-white text-green-800"}`}>All</Link>
+        {categories.map(c => <Link key={c.name} href={categoryUrl(c.name)} className={`rounded-full border px-4 py-2 ${category === c.name ? "bg-green-700 text-white" : "bg-white text-green-800"}`}>{c.name}</Link>)}
+      </nav>
+      <p className="mb-4 text-gray-600">{filtered.length} products found</p>
+      {!filtered.length && <p className="mb-8 text-gray-700">No matching products. <Link href="/products" className="underline">Clear filters</Link></p>}
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
         gap: "22px"
       }}>
-        {products.map((product) => (
+        {filtered.map((product) => (
           <Link
             key={product.id}
             href={`/products/${product.id}`}
@@ -68,7 +70,7 @@ export default function ProductsPage() {
               </p>
 
               <p style={{ color: "#28784b", fontWeight: "bold" }}>
-                {product.price}
+                ${product.price}
               </p>
 
               <span style={{ color: "#28784b", fontWeight: "600" }}>

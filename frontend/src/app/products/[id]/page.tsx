@@ -3,26 +3,14 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
 
-const products = [
-  { id: 1, name: "Banana", category: "Fresh Produce", price: "$1.49", icon: "🍌", description: "Fresh and naturally sweet bananas, perfect for everyday snacks and smoothies." },
-  { id: 2, name: "Strawberries", category: "Fresh Produce", price: "$3.99", icon: "🍓", description: "Sweet and juicy strawberries, great for desserts and healthy snacks." },
-  { id: 3, name: "Whole Milk", category: "Dairy & Eggs", price: "$2.79", icon: "🥛", description: "A classic dairy essential for breakfast, tea and everyday cooking." },
-  { id: 4, name: "Cheddar Cheese", category: "Dairy & Eggs", price: "$4.49", icon: "🧀", description: "Rich and creamy cheddar cheese for sandwiches and meals." },
-  { id: 5, name: "Potato Chips", category: "Snacks", price: "$2.99", icon: "🍟", description: "Crunchy potato chips for a quick and tasty snack." },
-  { id: 6, name: "Orange Juice", category: "Beverages", price: "$3.49", icon: "🧃", description: "Refreshing orange juice for your breakfast and daily routine." },
-  { id: 7, name: "White Bread", category: "Bakery", price: "$2.49", icon: "🍞", description: "Soft white bread, suitable for toast and sandwiches." },
-  { id: 8, name: "Chicken", category: "Meat & Seafood", price: "$6.99", icon: "🍗", description: "A versatile kitchen staple for a variety of meals." },
-  { id: 9, name: "Eggs", category: "Dairy & Eggs", price: "$3.29", icon: "🥚", description: "Everyday eggs for breakfast, baking and cooking." },
-  { id: 10, name: "Apples", category: "Fresh Produce", price: "$2.99", icon: "🍎", description: "Crisp apples, perfect for a fresh and simple snack." },
-  { id: 11, name: "Ice Cream", category: "Frozen Foods", price: "$4.99", icon: "🍨", description: "A sweet frozen treat for dessert lovers." },
-  { id: 12, name: "Cereal", category: "Pantry", price: "$3.79", icon: "🥣", description: "A convenient breakfast option for busy mornings." },
-];
+
+import { products } from "@/lib/catalog";
+import { useBasket } from "@/components/basket";
 
 export default function ProductDetailsPage() {
   const params = useParams();
-  const [added, setAdded] = useState(false);
+  const { items, add } = useBasket();
 
   const product = products.find(
     (item) => item.id === Number(params.id)
@@ -90,7 +78,7 @@ export default function ProductDetailsPage() {
             color: "#28784b",
             fontSize: "28px"
           }}>
-            {product.price}
+            ${product.price}
           </h2>
 
           <p style={{
@@ -102,7 +90,7 @@ export default function ProductDetailsPage() {
           </p>
 
           <button
-            onClick={() => setAdded(true)}
+            onClick={() => add(product.id)}
             style={{
               background: "#28784b",
               color: "white",
@@ -114,8 +102,9 @@ export default function ProductDetailsPage() {
               cursor: "pointer"
             }}
           >
-            {added ? "Added to Basket ✓" : "Add to Basket"}
+            {items[product.id] ? `Add another (${items[product.id]} in basket)` : "Add to Basket"}
           </button>
+          <p className="mt-3 text-green-800" role="status">{items[product.id] ? `${items[product.id]} in your basket` : ""}</p>
         </div>
       </div>
     </main>
