@@ -64,6 +64,9 @@ def evaluate(fill):
             recall += correct / len(relevant)
             hits += 1 if correct > 0 else 0
             count += 1
+        if count == 0:
+            print("WARNING: no usable (previous, current) basket pairs found.")
+            continue
         rows.append({
             "K": k,
             "Precision@K": round(precision / count, 4),
@@ -75,6 +78,7 @@ def evaluate(fill):
 
 # Rules only shows how well the rules work alone;
 # Hybrid is the final system (rules + popular fillers)
+print(f"Usable user pairs: {len(pairs)}")
 print("Rules only")
 print(evaluate(False))
 print()
