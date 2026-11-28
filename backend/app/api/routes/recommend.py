@@ -10,9 +10,12 @@ from app.schemas.recommendation import (
 
 from app.services.recommendation import (
     BASKETS_PATH,
+    CATALOG_PATH,
     load_rules,
     get_popular,
     get_popular_counts,
+    build_cooccurrence,
+    build_similar,
     load_names,
     recommend
 )
@@ -26,6 +29,8 @@ rules = load_rules()
 popular = get_popular(baskets_df)
 popular_counts = get_popular_counts(baskets_df)
 names = load_names()
+cooc = build_cooccurrence(baskets_df)
+similar = build_similar(pd.read_csv(CATALOG_PATH), popular, baskets_df)
 
 
 @router.post("/recommend", response_model=RecommendationResponse)
@@ -35,7 +40,9 @@ def get_recommendations(request: RecommendationRequest):
         rules,
         popular,
         request.k,
-        names=names
+        names=names,
+        cooc=cooc,
+        similar=similar
     )
 
     for item in results:
