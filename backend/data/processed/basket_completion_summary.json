@@ -1,0 +1,12 @@
+{
+  "protocol": "random 80/20 basket split; half of each test basket is the cart, the other half is hidden",
+  "seed": 42,
+  "train_baskets": 24000,
+  "test_cases": 4943,
+  "rules_mined": 50,
+  "k_values": [
+    5,
+    10,
+    20
+  ]
+}
