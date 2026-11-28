@@ -73,20 +73,7 @@ function notifyListeners() {
   listeners.forEach((callback) => callback());
 }
 
-function updateBasket(productId: number, change: number) {
-  if (!Number.isSafeInteger(productId) || productId <= 0) {
-    return;
-  }
-
-  const next = { ...getSnapshot() };
-  const newQuantity = (next[productId] || 0) + change;
-
-  if (newQuantity > 0) {
-    next[productId] = newQuantity;
-  } else {
-    delete next[productId];
-  }
-
+function saveBasket(next: BasketItems) {
   cachedBasket = next;
 
   try {
@@ -101,6 +88,38 @@ function updateBasket(productId: number, change: number) {
   notifyListeners();
 }
 
+function updateBasket(productId: number, change: number) {
+  if (!Number.isSafeInteger(productId) || productId <= 0) {
+    return;
+  }
+
+  const next = { ...getSnapshot() };
+  const newQuantity = (next[productId] || 0) + change;
+
+  if (newQuantity > 0) {
+    next[productId] = newQuantity;
+  } else {
+    delete next[productId];
+  }
+
+  saveBasket(next);
+}
+
+function removeAllBasket(productId: number) {
+  if (!Number.isSafeInteger(productId) || productId <= 0) {
+    return;
+  }
+
+  const next = { ...getSnapshot() };
+  delete next[productId];
+
+  saveBasket(next);
+}
+
+function clearBasket() {
+  saveBasket({});
+}
+
 export function useBasket() {
   const items = useSyncExternalStore(
     subscribe,
@@ -112,6 +131,8 @@ export function useBasket() {
     items,
     add: (productId: number) => updateBasket(productId, 1),
     remove: (productId: number) => updateBasket(productId, -1),
+    removeAll: removeAllBasket,
+    clear: clearBasket,
   };
 }
 
