@@ -70,6 +70,10 @@ Association rules are evaluated using:
 - **Confidence:** Strength of the association between antecedent and consequent.
 - **Lift:** Strength of the association relative to independent occurrence.
 
+The main Phase 2 experimentation and recommendation evaluation notebook is:
+
+`Phase2/notebooks/AssociationRules_and_RecommendationEvaluation.ipynb`
+
 The selected mining configuration is:
 
 | Parameter | Value |
@@ -138,13 +142,15 @@ These results show that association rules can identify useful purchasing relatio
 
 The hybrid recommender was compared with popularity-only and association-rule-only approaches.
 
+**Results at K = 5:**
+
 | Method | Precision@5 | Recall@5 | Hit Rate@5 |
 |---|---:|---:|---:|
 | Popularity | 6.75% | 4.51% | 27.83% |
 | Association rules | 1.77% | 1.08% | 8.38% |
 | Hybrid | **6.84%** | **4.56%** | **28.18%** |
 
-At cutoff 10:
+**Results at K = 10:**
 
 | Method | Precision@10 | Recall@10 | Hit Rate@10 |
 |---|---:|---:|---:|
@@ -200,6 +206,10 @@ market-basket-analysis/
 │   ├── tests/
 │   ├── requirements.txt
 │   └── README.md
+│
+├── Phase2/
+│   └── notebooks/
+│       └── AssociationRules_and_RecommendationEvaluation.ipynb
 │
 ├── backend/
 │   ├── app/
